@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop/providers/product.dart';
 import 'package:shop/providers/products.dart';
-import 'package:shop/widgets/product_item.dart';
+import 'package:shop/widgets/product_grid_item.dart';
 import 'package:provider/provider.dart';
 
 class ProductGrid extends StatelessWidget {
@@ -29,7 +29,7 @@ class ProductGrid extends StatelessWidget {
       //o change notifier já foi criado(em dummy_data atráves do construtor de Product que é um ChangeNotifier) por tanto se utiliza o .value
       itemBuilder: (ctx, index) => ChangeNotifierProvider.value(
         value: products[index],
-        child: ProductItem(),
+        child: ProductGridItem(),
       ),
     );
   }
