@@ -129,7 +129,6 @@ class _AuthCardState extends State<AuthCard> {
                 ),
                 if (_authMode == AuthMode.Signup)
                   TextFormField(
-                    controller: _passwordController,
                     decoration: InputDecoration(
                       labelText: 'Confirmar senha',
                     ),
