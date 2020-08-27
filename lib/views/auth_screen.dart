@@ -6,7 +6,7 @@ import 'package:shop/widgets/auth_card.dart';
 class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final deviceSize = MediaQuery.of(context).size;
+    //final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
         body: Stack(
       children: [
@@ -21,45 +21,52 @@ class AuthScreen extends StatelessWidget {
             end: Alignment.bottomRight,
           )),
         ),
-        Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-                padding: EdgeInsets.symmetric(
-                  vertical: 8,
-                  horizontal: 70,
-                ),
-                transform: Matrix4.rotationZ(-8 * pi / 180)..translate(-10.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.deepOrange.shade900,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 8,
-                      color: Colors.black26,
-                      offset: Offset(0, 2),
+        Center(
+          child: SingleChildScrollView(
+            child: Container(
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 45),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 70,
                     ),
-                  ],
-                ),
-                child: FittedBox(
-                  child: Text(
-                    'Minha Loja',
-                    maxLines: 1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Theme.of(context).accentTextTheme.headline6.color,
-                      fontSize: 45,
-                      fontFamily: 'Anton',
+                    transform: Matrix4.rotationZ(-8 * pi / 180)
+                      ..translate(-10.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.deepOrange.shade900,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 8,
+                          color: Colors.black26,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: FittedBox(
+                      child: Text(
+                        'Minha Loja',
+                        maxLines: 1,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color:
+                              Theme.of(context).accentTextTheme.headline6.color,
+                          fontSize: 45,
+                          fontFamily: 'Anton',
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  AuthCard()
+                ],
               ),
-              AuthCard()
-            ],
+            ),
           ),
         ),
       ],
