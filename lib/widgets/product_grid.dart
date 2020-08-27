@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop/providers/product.dart';
 import 'package:shop/providers/products.dart';
 import 'package:shop/widgets/product_grid_item.dart';
 import 'package:provider/provider.dart';
